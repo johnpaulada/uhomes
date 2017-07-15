@@ -4,17 +4,18 @@ import gql from 'graphql-tag';
 import ListComponent from '../components/ListComponent';
 
 class ListContainer extends React.Component {
+  isLoading = () => this.props.allHouses.loading
 
-  getListData = () => {
-    const isLoading = this.props.allHouses.loading;
+  getListData = isLoading => {
     return {houses: (isLoading ? [] : this.props.allHouses.allHouses)};
   }
+
   constructor(props){
     super(props);
-   this.state = {
+    this.state = {
       yearsToPay : 1,
       downpayment: 10
-   };
+    };
   }
 
   setYeartoPay = (year) => {
@@ -29,8 +30,14 @@ class ListContainer extends React.Component {
   }
 
   render() {
+    const isLoading = this.isLoading();
+
+  render() {
     return (
-      <ListComponent {...this.getListData()} {...this.state} setYearstoPay={this.setYeartoPay} setDownPayment={this.setDownPayment} />
+      <View>
+        <ActivityIndicator animating={isLoading} size={'large'} />
+        <ListComponent {...this.getListData()} {...this.state} setYearstoPay={this.setYeartoPay} setDownPayment={this.setDownPayment} />
+      </View>
     );
   }
 }
