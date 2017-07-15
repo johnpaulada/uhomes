@@ -1,12 +1,19 @@
 import React from 'react';
-import { View } from 'react-native';
+import { KeyboardAvoidingView, View } from 'react-native';
+import { connect } from 'react-redux';
+import { NavigationActions } from 'react-navigation';
+import LoanCalculatorContainer from '../containers/LoanCalculatorContainer';
 
 class LoanCalculatorScreen extends React.Component {
+  static navigationOptions = {
+    title: "Loan Calculator"
+  };
   render() {
     return (
-      <View></View>
+      <LoanCalculatorContainer {...this.props} />
     );
   }
 }
 
-export default LoanCalculatorScreen;
+const mapStateToProps = (state) => ({...state});
+export default connect(mapStateToProps)(LoanCalculatorScreen);
