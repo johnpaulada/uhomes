@@ -3,6 +3,7 @@ import { StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 import ListScreen from '../screens/ListScreen';
 import HouseDetailsScreen from '../screens/HouseDetailsScreen';
+import LoanCalculatorScreen from '../screens/LoanCalculatorScreen';
 
 const ListNavigator = StackNavigator({
   List: {
@@ -10,6 +11,9 @@ const ListNavigator = StackNavigator({
   },
   HouseDetails: {
     screen: HouseDetailsScreen
+  },
+  LoanCalculator: {
+    screen: LoanCalculatorScreen
   }
 }, {
   headerMode: 'none',
