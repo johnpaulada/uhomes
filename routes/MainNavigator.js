@@ -1,11 +1,18 @@
 import { TabNavigator } from 'react-navigation';
-import MainContainer from '../containers/MainContainer';
-import MainScreen from '../screens/MainScreen';
+import ListScreen from '../screens/ListScreen';
+import AddHouseScreen from '../screens/AddHouseScreen';
+import SearchScreen from '../screens/SearchScreen';
 
 const MainNavigator = TabNavigator({
-  Main: {
-    screen: MainScreen,
+  List: {
+    screen: ListScreen
   },
+  AddHouse: {
+    screen: AddHouseScreen
+  },
+  Search: {
+    screen: SearchScreen
+  }
 }, {
   tabBarOptions: {
     activeTintColor: '#e91e63',
