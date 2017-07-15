@@ -4,11 +4,6 @@ import gql from 'graphql-tag';
 import MainComponent from '../components/MainComponent';
 
 class MainContainer extends React.Component {
-  constructor(props) {
-    super(props)
-    console.log(this.props);
-  }
-
   render() {
     return (
       <MainComponent />

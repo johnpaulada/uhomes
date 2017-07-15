@@ -1,5 +1,7 @@
-import navigation from './navigation';
+import nav from './nav';
+import houses from './houses';
 
 export {
-  navigation
+  nav,
+  houses
 };

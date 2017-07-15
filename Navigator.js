@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { addNavigationHelpers } from 'react-navigation';
+import { connect } from 'react-redux';
 import AppNavigator from './routes/AppNavigator';
 import MainScreen from './screens/MainScreen';
 
@@ -9,7 +10,7 @@ export default class Navigator extends React.Component {
     return (
       <AppNavigator navigation={addNavigationHelpers({
         dispatch: this.props.dispatch,
-        state: this.props.navigation,
+        state: this.props.nav,
       })} />
     );
   }

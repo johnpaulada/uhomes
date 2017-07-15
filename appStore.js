@@ -8,7 +8,7 @@ import { createNetworkInterface } from 'apollo-client';
 import * as reducers from './reducers';
 
 const networkInterface = createNetworkInterface({
-  uri: 'http://localhost:8080/graphql'
+  uri: 'https://api.graph.cool/simple/v1/cj54v6jmikwaf0196s8c28f3n'
 });
 
 const apolloClient = new ApolloClient({networkInterface});
