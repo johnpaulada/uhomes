@@ -1,7 +1,7 @@
 import { TabNavigator } from 'react-navigation';
 import ListNavigator from '../routes/ListNavigator';
 import AddHouseScreen from '../screens/AddHouseScreen';
-import SearchScreen from '../screens/SearchScreen';
+import SearchNavigator from '../routes/SearchNavigator';
 
 const MainNavigator = TabNavigator({
   List: {
@@ -11,7 +11,7 @@ const MainNavigator = TabNavigator({
     screen: AddHouseScreen
   },
   Search: {
-    screen: SearchScreen
+    screen: SearchNavigator
   }
 }, {
   tabBarOptions: {
