@@ -1,22 +1,16 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Icon } from 'react-native-elements';
+import SearchParameterContainer from '../containers/SearchParameterContainer';
 
 class SearchScreen extends React.Component {
   static navigationOptions = {
-    tabBarLabel: 'Search',
-    tabBarIcon: ({ tintColor }) => (
-      <Icon
-        name='search'
-        type='font-awesome'
-        color={tintColor}
-      />
-    )
+    title: "Find a Home"
   };
 
   render() {
     return (
-      <View></View>
+      <SearchParameterContainer />
     );
   }
 }

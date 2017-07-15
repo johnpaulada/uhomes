@@ -1,18 +1,24 @@
 import React from 'react';
 import { graphql, compose } from 'react-apollo';
 import gql from 'graphql-tag';
+import { ActivityIndicator, View } from 'react-native';
 import ListComponent from '../components/ListComponent';
 
 class ListContainer extends React.Component {
 
-  getListData = () => {
-    const isLoading = this.props.allHouses.loading;
+  isLoading = () => this.props.allHouses.loading
+  getListData = isLoading => {
     return {houses: (isLoading ? [] : this.props.allHouses.allHouses)};
   }
 
   render() {
+    const isLoading = this.isLoading();
+
     return (
-      <ListComponent {...this.getListData()} />
+      <View>
+        <ActivityIndicator animating={isLoading} size={'large'} />
+        <ListComponent {...this.getListData(isLoading)} />
+      </View>
     );
   }
 }
@@ -21,18 +27,17 @@ const allHouses = gql`
 {
   allHouses {
     id
-    seller{
+    seller {
       fullName
     }
     price
-    location{
+    location {
       latitude
       longitude
       name
     }
     description
     image
-    sellingPrice
   }
 }`;
 
