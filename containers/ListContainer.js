@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, compose } from 'react-apollo';
 import gql from 'graphql-tag';
 import ListComponent from '../components/ListComponent';
+import { ActivityIndicator, View } from 'react-native';
 
 class ListContainer extends React.Component {
   isLoading = () => this.props.allHouses.loading
@@ -32,11 +33,10 @@ class ListContainer extends React.Component {
   render() {
     const isLoading = this.isLoading();
 
-  render() {
     return (
       <View>
         <ActivityIndicator animating={isLoading} size={'large'} />
-        <ListComponent {...this.getListData()} {...this.state} setYearstoPay={this.setYeartoPay} setDownPayment={this.setDownPayment} />
+        <ListComponent {...this.getListData(isLoading)} {...this.state} setYearstoPay={this.setYeartoPay} setDownPayment={this.setDownPayment} />
       </View>
     );
   }
