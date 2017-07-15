@@ -1,17 +1,23 @@
 import React from 'react';
 import { graphql, compose } from 'react-apollo';
 import gql from 'graphql-tag';
+import { NavigationActions } from 'react-navigation'
 import SearchComponent from '../components/SearchComponent';
 
 class SearchContainer extends React.Component {
   isLoading = () => this.props.SearchQuery.loading;
   getResults = isLoading => isLoading ? [] : this.props.SearchQuery.allHouses;
+  onViewPress = () => {
+    this.props.dispatch(NavigationActions.navigate({
+      routeName: "LoanCalculator"
+    }));
+  }
 
   render() {
     const isLoading = this.isLoading();
 
     return (
-      <SearchComponent isLoading={isLoading} results={this.getResults(isLoading)} maxPrice={this.props.maxPrice} setMaxPrice={this.props.setMaxPrice} />
+      <SearchComponent onViewPress={this.onViewPress} {...this.props} isLoading={isLoading} results={this.getResults(isLoading)} />
     );
   }
 }

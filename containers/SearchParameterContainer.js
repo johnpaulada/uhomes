@@ -14,7 +14,7 @@ class SearchParameterContainer extends React.Component {
 
   render() {
     return (
-      <SearchContainer maxPrice={this.state.maxPrice} setMaxPrice={this.setMaxPrice} />
+      <SearchContainer dispatch={this.props.dispatch} maxPrice={this.state.maxPrice} setMaxPrice={this.setMaxPrice} />
     )
   }
 }

@@ -13,7 +13,8 @@ const HouseCard = props => {
       <Button
         containerViewStyle={styles.buttonContainerView}
         backgroundColor="#03A9F4"
-        title='View' />
+        title='View'
+        onPress={props.onViewPress} />
     </Card>
   );
 }
