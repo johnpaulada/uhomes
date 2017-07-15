@@ -15,8 +15,7 @@ class ListScreen extends React.Component {
       />
     )
   };
-
-  render() {
+  render(){
     return (
       <ListContainer {...this.props} />
     );

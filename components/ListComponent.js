@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, TextInput, StyleSheet } from 'react-native';
+import HouseCard from './HouseCard';
 
 const ListComponent = props => {
   return (
     <View>
-      {props.houses.length > 0 ? props.houses.map(house => <Text key={house.id}>{house.price}</Text>) : null}
+      {props.houses.length > 0 ? props.houses.map(house => <HouseCard key={house.id} {...house}></HouseCard>) : null}
     </View>
   )
 }
