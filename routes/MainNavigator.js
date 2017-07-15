@@ -4,12 +4,6 @@ import AddHouseScreen from '../screens/AddHouseScreen';
 import SearchNavigator from '../routes/SearchNavigator';
 
 const MainNavigator = TabNavigator({
-  List: {
-    screen: ListNavigator
-  },
-  AddHouse: {
-    screen: AddHouseScreen
-  },
   Search: {
     screen: SearchNavigator
   }

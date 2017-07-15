@@ -9,7 +9,8 @@
     "icon": "./icon.png",
     "loading": {
       "icon": "./icon.png",
-      "backgroundColor": "#FAFAFA"
+      "backgroundColor": "#FAFAFA",
+      "hideExponentText": true
     },
     "ios": {
       "bundleIdentifier": "com.uhomes.uhomesapp"
