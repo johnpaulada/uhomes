@@ -5,10 +5,29 @@ import { ActivityIndicator, View } from 'react-native';
 import ListComponent from '../components/ListComponent';
 
 class ListContainer extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      yearsToPay : 1,
+      downpayment: 10
+    };
+  }
 
   isLoading = () => this.props.allHouses.loading
   getListData = isLoading => {
     return {houses: (isLoading ? [] : this.props.allHouses.allHouses)};
+  }
+
+  setYeartoPay = (year) => {
+    this.setState({
+        yearsToPay: year
+    })
+  }
+  setDownPayment = (payment) => {
+    this.setState({
+      downpayment: payment
+    });
   }
 
   render() {
@@ -17,7 +36,7 @@ class ListContainer extends React.Component {
     return (
       <View>
         <ActivityIndicator animating={isLoading} size={'large'} />
-        <ListComponent {...this.getListData(isLoading)} />
+        <ListComponent {...this.getListData(isLoading)} {...this.state} setYearstoPay={this.setYeartoPay} setDownPayment={this.setDownPayment} />
       </View>
     );
   }
