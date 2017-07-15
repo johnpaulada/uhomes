@@ -9,10 +9,28 @@ class ListContainer extends React.Component {
     const isLoading = this.props.allHouses.loading;
     return {houses: (isLoading ? [] : this.props.allHouses.allHouses)};
   }
+  constructor(props){
+    super(props);
+   this.state = {
+      yearsToPay : 1,
+      downpayment: 10
+   };
+  }
+
+  setYeartoPay = (year) => {
+    this.setState({
+        yearsToPay: year
+    })
+  }
+  setDownPayment = (payment) => {
+    this.setState({
+      downpayment: payment
+    });
+  }
 
   render() {
     return (
-      <ListComponent {...this.getListData()} />
+      <ListComponent {...this.getListData()} {...this.state} setYearstoPay={this.setYeartoPay} setDownPayment={this.setDownPayment} />
     );
   }
 }
@@ -31,7 +49,6 @@ const allHouses = gql`
     }
     description
     image
-    sellingPrice
   }
 }`;
 
