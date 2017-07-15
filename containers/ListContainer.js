@@ -1,22 +1,22 @@
 import React from 'react';
 import { graphql, compose } from 'react-apollo';
 import gql from 'graphql-tag';
-import ListComponent from '../components/ListComponent';
 import { ActivityIndicator, View } from 'react-native';
+import ListComponent from '../components/ListComponent';
 
 class ListContainer extends React.Component {
-  isLoading = () => this.props.allHouses.loading
-
-  getListData = isLoading => {
-    return {houses: (isLoading ? [] : this.props.allHouses.allHouses)};
-  }
-
   constructor(props){
     super(props);
+
     this.state = {
       yearsToPay : 1,
       downpayment: 10
     };
+  }
+
+  isLoading = () => this.props.allHouses.loading
+  getListData = isLoading => {
+    return {houses: (isLoading ? [] : this.props.allHouses.allHouses)};
   }
 
   setYeartoPay = (year) => {
@@ -45,11 +45,12 @@ class ListContainer extends React.Component {
 const allHouses = gql`
 {
   allHouses {
-    seller{
+    id
+    seller {
       fullName
     }
     price
-    location{
+    location {
       latitude
       longitude
       name
