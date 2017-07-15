@@ -2,10 +2,14 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 import ListScreen from '../screens/ListScreen';
+import HouseDetailsScreen from '../screens/HouseDetailsScreen';
 
 const ListNavigator = StackNavigator({
   List: {
     screen: ListScreen
+  },
+  HouseDetails: {
+    screen: HouseDetailsScreen
   }
 }, {
   headerMode: 'none',
