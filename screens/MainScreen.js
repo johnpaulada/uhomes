@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import MainContainer from '../containers/MainContainer';
 
 class MainScreen extends React.Component {
   static navigationOptions = {
@@ -8,9 +9,7 @@ class MainScreen extends React.Component {
 
   render() {
     return (
-      <View>
-        <Text>Main Screen</Text>
-      </View>
+      <MainContainer />
     );
   }
 }

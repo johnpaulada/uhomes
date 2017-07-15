@@ -1,8 +1,7 @@
 import React from 'react';
-import { View, Text, TextInput, StyleSheet } from 'react-native';
 import { graphql, compose } from 'react-apollo';
 import gql from 'graphql-tag';
-import MainScreen from '../screens/MainScreen';
+import MainComponent from '../components/MainComponent';
 
 class MainContainer extends React.Component {
   constructor(props) {
@@ -12,7 +11,7 @@ class MainContainer extends React.Component {
 
   render() {
     return (
-      <MainScreen />
+      <MainComponent />
     );
   }
 }
