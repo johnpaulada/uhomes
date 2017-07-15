@@ -20,6 +20,7 @@ class ListContainer extends React.Component {
 const allHouses = gql`
 {
   allHouses {
+    id
     seller{
       fullName
     }
