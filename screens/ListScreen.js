@@ -6,15 +6,9 @@ import { connect } from 'react-redux';
 
 class ListScreen extends React.Component {
   static navigationOptions = {
-    tabBarLabel: 'List',
-    tabBarIcon: ({ tintColor }) => (
-      <Icon
-        name='list'
-        type='font-awesome'
-        color={tintColor}
-      />
-    )
+    title: "House List"
   };
+
   render(){
     return (
       <ListContainer {...this.props} />
