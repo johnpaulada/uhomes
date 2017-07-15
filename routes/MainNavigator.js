@@ -1,11 +1,11 @@
 import { TabNavigator } from 'react-navigation';
-import ListScreen from '../screens/ListScreen';
+import ListNavigator from '../routes/ListNavigator';
 import AddHouseScreen from '../screens/AddHouseScreen';
 import SearchScreen from '../screens/SearchScreen';
 
 const MainNavigator = TabNavigator({
   List: {
-    screen: ListScreen
+    screen: ListNavigator
   },
   AddHouse: {
     screen: AddHouseScreen
@@ -16,7 +16,7 @@ const MainNavigator = TabNavigator({
 }, {
   tabBarOptions: {
     activeTintColor: '#e91e63',
-  },
+  }
 });
 
 export default MainNavigator;
