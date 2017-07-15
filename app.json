@@ -1,5 +1,21 @@
 {
   "expo": {
-    "sdkVersion": "18.0.0"
+    "name": "UHomes",
+    "slug": "uhomes",
+    "sdkVersion": "18.0.0",
+    "privacy": "public",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./icon.png",
+    "loading": {
+      "icon": "./icon.png",
+      "backgroundColor": "#FAFAFA"
+    },
+    "ios": {
+      "bundleIdentifier": "com.uhomes.uhomesapp"
+    },
+    "android": {
+      "package": "com.uhomes.uhomesapp"
+    }
   }
 }
