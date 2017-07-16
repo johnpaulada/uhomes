@@ -9,8 +9,8 @@ const HouseCard = props => {
       image={{uri: props.image}}
       wrapperStyle={{paddingBottom: 0}}>
 
-      <Text>Prices: {props.price}</Text>
-    	<Text>Description: {props.description}</Text>
+      <Text style={[styles.fancy]}>Prices: {props.price}</Text>
+    	<Text style={[styles.fancy]}>Description: {props.description}</Text>
       <Button
         containerViewStyle={styles.buttonContainerView}
         backgroundColor="#03A9F4"
@@ -32,6 +32,9 @@ const styles = StyleSheet.create({
   },
   buttonContainerView: {
     marginTop: 10
+  },
+  fancy: {
+    fontFamily: 'Avenir Next'
   }
 })
 
