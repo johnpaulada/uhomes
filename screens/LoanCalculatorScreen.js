@@ -8,6 +8,7 @@ class LoanCalculatorScreen extends React.Component {
   static navigationOptions = {
     title: "Loan Calculator"
   };
+  
   render() {
     return (
       <LoanCalculatorContainer {...this.props} />

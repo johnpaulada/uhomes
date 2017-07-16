@@ -21,14 +21,30 @@ const SearchComponent = props => {
         value={props.maxPrice}
         onSlidingComplete={props.setMaxPrice} />
 
-      <Text style={{alignSelf: 'center'}}>Budget: {props.maxPrice}</Text>
+      <Text style={[styles.fancy, styles.big, styles.selfCentered]}>{props.maxPrice}</Text>
+      <Text style={[styles.fancy, styles.small, styles.selfCentered]}>Budget</Text>
       <ActivityIndicator animating={props.isLoading} size={'large'} />
 
       <ScrollView>
-        {props.results.map(result => <HouseCard onViewPress={props.onViewPress} key={result.id} {...result} />)}
+        {props.results.map(result => <HouseCard dispatch={props.dispatch} key={result.id} {...result} />)}
       </ScrollView>
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  fancy: {
+    fontFamily: 'Avenir Next'
+  },
+  big: {
+    fontSize: 48
+  },
+  small: {
+    fontSize: 18
+  },
+  selfCentered: {
+    alignSelf: 'center'
+  }
+})
 
 export default SearchComponent;

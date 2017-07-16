@@ -18,7 +18,8 @@ const PriceCalculator = props => {
               maxLength={40}
               value={props.price}
               onChangeText={props.setPrice}
-              keyboardType={"numeric"} />
+              keyboardType={"numeric"}
+              placeholder={'e.g. 1000000'} />
           <FormLabel>Years to Pay: {props.yearsToPay}
           </FormLabel>
 
@@ -47,6 +48,10 @@ const PriceCalculator = props => {
           {props.calculating ? <ActivityIndicator style={[styles.moveDown]} animating={props.calculating} size={'large'} /> : <Text style={[styles.center, styles.bigger, styles.moveDown]}>{props.calculatedPrice}</Text>}
 
           <Text style={[styles.center, styles.fancy, styles.big, styles.moveDown]}>Monthly Payment</Text>
+
+          <Text style={[styles.center, styles.biggish, styles.moveDown]}>(+632) 841-8600</Text>
+
+          <Text style={[styles.center, styles.fancy, styles.big, styles.moveDown]}>UnionBank Hotline</Text>
       </View>
     </KeyboardAwareScrollView>
   );
@@ -61,6 +66,9 @@ const styles = StyleSheet.create({
   },
   bigger: {
     fontSize: 48
+  },
+  biggish: {
+    fontSize: 36
   },
   fancy: {
     fontFamily: 'Avenir Next'
