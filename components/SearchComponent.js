@@ -25,7 +25,7 @@ const SearchComponent = props => {
       <ActivityIndicator animating={props.isLoading} size={'large'} />
 
       <ScrollView>
-        {props.results.map(result => <HouseCard onViewPress={props.onViewPress} key={result.id} {...result} />)}
+        {props.results.map(result => <HouseCard dispatch={props.dispatch} key={result.id} {...result} />)}
       </ScrollView>
     </View>
   )

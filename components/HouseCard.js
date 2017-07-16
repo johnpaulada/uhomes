@@ -1,6 +1,7 @@
 import React,{Dimensions} from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import { Button, Card } from 'react-native-elements'
+import { Button, Card } from 'react-native-elements';
+import { NavigationActions } from 'react-navigation';
 
 const HouseCard = props => {
   return (
@@ -14,7 +15,12 @@ const HouseCard = props => {
         containerViewStyle={styles.buttonContainerView}
         backgroundColor="#03A9F4"
         title='View'
-        onPress={props.onViewPress} />
+        onPress={() => {
+          props.dispatch(NavigationActions.navigate({
+            routeName: "SellerDetails",
+            params: {id: props.seller.id}
+          }));
+        }} />
     </Card>
   );
 }
