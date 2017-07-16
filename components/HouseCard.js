@@ -17,8 +17,8 @@ const HouseCard = props => {
         title='View'
         onPress={() => {
           props.dispatch(NavigationActions.navigate({
-            routeName: "SellerDetails",
-            params: {id: props.seller.id}
+            routeName: "HouseDetails",
+            params: {...props}
           }));
         }} />
     </Card>

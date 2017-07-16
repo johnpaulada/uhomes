@@ -27,8 +27,6 @@ query HouseSearch($maxPrice: Float) {
     type
     description
     location {
-      latitude
-      longitude
       name
     }
     price

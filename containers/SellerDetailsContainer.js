@@ -10,6 +10,8 @@ class SellerDetailsContainer extends React.Component {
   render() {
     const isLoading = this.isLoading();
 
+    console.log(this.props.SellerDetails);
+
     return (
       isLoading ? null : <SellerDetailsComponent {...this.getResult(isLoading)} />
     );
@@ -22,6 +24,7 @@ query SellerDetails($id: ID!) {
     avatar
     fullName
     isVerified
+    contactNumber
     houses {
       id
       image

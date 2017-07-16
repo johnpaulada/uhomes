@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image,Dimensions,ScrollView } from 'react-native';
-import {Button} from 'react-native-elements'
+import {Button} from 'react-native-elements';
+import { NavigationActions } from 'react-navigation';
 
 const PAY_CASH_BUTTON = "Pay Via Cash"
 const LOAN_UNIONBANK = "Loan Via Unionbank"
@@ -16,14 +17,23 @@ const HouseDetails = props => {
           <Text style={styles.text}>Price: {props.price}</Text>
           <Text style={styles.text}>Description: {props.description}</Text>
           <Text style={styles.text}>Location: {props.location.name}</Text>
-          
+
         </View>
       </ScrollView>
       <View style={styles.buttonLayout}>
-        <Button 
-              title={PAY_CASH_BUTTON} style={styles.button} backgroundColor={"#81D4FA"} onPress={props.payCash} />
-        <Button 
-              title={LOAN_UNIONBANK} style={styles.button} backgroundColor={"#FF8A65"} onPress={props.loanUnion} />
+        <Button
+          title={PAY_CASH_BUTTON} style={styles.button} backgroundColor={"#81D4FA"} onPress={() => {
+            props.dispatch(NavigationActions.navigate({
+              routeName: "SellerDetails",
+              params: {id: props.seller.id}
+            }));
+          }} />
+        <Button
+          title={LOAN_UNIONBANK} style={styles.button} backgroundColor={"#FF8A65"} onPress={() => {
+            props.dispatch(NavigationActions.navigate({
+              routeName: "LoanCalculator"
+            }));
+          }} />
       </View>
 
     </View>
