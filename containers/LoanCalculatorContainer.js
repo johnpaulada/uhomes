@@ -1,5 +1,6 @@
 import React from 'react';
 import PriceCalculator from '../components/PriceCalculator';
+import Config from '../env.json';
 
 class LoanCalculatorContainer extends React.Component {
   constructor(props) {
@@ -25,8 +26,8 @@ class LoanCalculatorContainer extends React.Component {
         method: 'GET',
         headers: {
           'Accept': 'application/json',
-          'x-ibm-client-secret': 'S0cG8rY4iE0yP5gX6fX3wM7kX6cJ5qE0lI0uM7wO2sS6qJ7mT6',
-          'x-ibm-client-id': '22c6b6f6-d8de-4e67-b203-6c2e1e265f47'
+          'x-ibm-client-secret': Config.UNIONBANK_CLIENT_SECRET,
+          'x-ibm-client-id': Config.UNIONBANK_CLIENT_ID
         }
       })
       .then(response => response.json())

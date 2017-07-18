@@ -6,11 +6,11 @@ import {
 import { ApolloClient } from 'react-apollo';
 import { createNetworkInterface } from 'apollo-client';
 import * as reducers from './reducers';
+import Config from './env.json';
 
 const networkInterface = createNetworkInterface({
-  uri: 'https://api.graph.cool/simple/v1/cj54v6jmikwaf0196s8c28f3n'
+  uri: Config.GRAPHQL_URL
 });
-
 
 // networkInterface.useAfter([{
 //   applyAfterware({ response }, next) {
